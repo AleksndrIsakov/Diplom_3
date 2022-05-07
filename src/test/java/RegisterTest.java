@@ -5,6 +5,7 @@ import com.codeborne.selenide.conditions.webdriver.CurrentFrameUrl;
 import data.User;
 import data.UserGenerator;
 import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import lombok.extern.java.Log;
@@ -20,6 +21,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
+@Story("Регистрация")
 public class RegisterTest {
 
     private User user;
@@ -47,7 +49,7 @@ public class RegisterTest {
 
         // Проверим через API наличие зарегистрированного пользователя в системе
         ValidatableResponse response = userClient.login(user);
-        assertThat(response.extract().statusCode(), equalTo(SC_OK));
+        assertThat("Пользователь не зарегистрирован", response.extract().statusCode(), equalTo(SC_OK));
     }
 
     @Test

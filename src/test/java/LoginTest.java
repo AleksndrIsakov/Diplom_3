@@ -2,6 +2,7 @@ import api.UserClient;
 import com.codeborne.selenide.Selenide;
 import data.User;
 import data.UserGenerator;
+import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import page.*;
 
+@Story("Вход")
 @RunWith(Parameterized.class)
 public class LoginTest {
 
@@ -38,7 +40,7 @@ public class LoginTest {
     @Parameterized.Parameters
     public static Object[][] setData() {
         return new Object[][] {
-                {AbstractPage.getFullUrl(""), new MenuFragment()},
+                {AbstractPage.getFullUrl(""), new MenuPageFragment()},
                 {MainPage.getUrl(), new MainPage()},
                 {RegisterPage.getUrl(), new RegisterPage()},
                 {LoginPage.getUrl(), new LoginPage()},
