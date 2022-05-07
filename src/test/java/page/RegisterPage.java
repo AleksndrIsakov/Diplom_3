@@ -1,13 +1,9 @@
 package page;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
-import java.io.FileOutputStream;
 
 import static com.codeborne.selenide.Selenide.page;
 

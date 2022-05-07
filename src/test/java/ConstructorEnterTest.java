@@ -12,7 +12,7 @@ import page.MainPage;
 import page.MenuPageFragment;
 
 @Story("Переход из личного кабинета в конструктор")
-public class ConstructorEnterTest {
+public class ConstructorEnterTest extends RunConfiguration {
     private User user;
     private UserClient userClient;
     private MenuPageFragment menuPageFragment;
@@ -26,7 +26,7 @@ public class ConstructorEnterTest {
         LoginPage loginPage = Selenide.open(LoginPage.getUrl(), LoginPage.class);
         loginPage.login(user.getEmail(), user.getPassword());
 
-        menuPageFragment = loginPage.getMenuPage();
+        menuPageFragment = loginPage.getMainMenu();
         menuPageFragment.enterPersonalArea();
     }
 

@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 @Story("Раздел «Конструктор»")
 @RunWith(Parameterized.class)
-public class ConstructorTest {
+public class ConstructorTest extends RunConfiguration {
     private User user;
     private UserClient userClient;
     private MainPage mainPage;

@@ -17,7 +17,7 @@ public abstract class AbstractPage {
         return APPLICATION_URL + partOfUrl;
     }
 
-    public static MenuPageFragment getMenuPage() {
+    public static MenuPageFragment getMainMenu() {
         if (menuPageFragment == null)
             menuPageFragment = Selenide.page(MenuPageFragment.class);
         return menuPageFragment;

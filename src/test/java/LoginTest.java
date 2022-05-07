@@ -13,7 +13,7 @@ import page.*;
 
 @Story("Вход")
 @RunWith(Parameterized.class)
-public class LoginTest {
+public class LoginTest extends RunConfiguration {
 
     private User user;
     private UserClient userClient;

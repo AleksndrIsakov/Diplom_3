@@ -37,7 +37,7 @@ public class MenuPageFragment extends AbstractPage implements LoginInterface {
     }
 
     @Override
-    @Step("Переход через кнопку «Личный кабинет»")
+    @Step("Переход к авторизации через кнопку «Личный кабинет»")
     public LoginPage canLogin() {
         personalArea.click();
         return page(LoginPage.class);

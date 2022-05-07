@@ -16,7 +16,6 @@ public class ForgotPasswordPage extends AbstractPage implements LoginInterface {
     @FindBy(how = How.LINK_TEXT, using = "Войти")
     private SelenideElement toLogin;
 
-
     public static String getUrl(){
         return AbstractPage.getFullUrl(FORGOT_PASSWORD_PAGE);
     }

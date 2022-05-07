@@ -12,7 +12,7 @@ import page.MenuPageFragment;
 import page.ProfilePage;
 
 @Story("Выход из аккаунта")
-public class LogoutTest {
+public class LogoutTest extends RunConfiguration {
     private User user;
     private UserClient userClient;
     private MenuPageFragment menuPageFragment;
@@ -27,7 +27,7 @@ public class LogoutTest {
         LoginPage loginPage = Selenide.open(LoginPage.getUrl(), LoginPage.class);
         loginPage.login(user.getEmail(), user.getPassword());
 
-        menuPageFragment = loginPage.getMenuPage();
+        menuPageFragment = loginPage.getMainMenu();
         profilePage = menuPageFragment.enterPersonalArea();
     }
 

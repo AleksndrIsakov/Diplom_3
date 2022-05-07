@@ -10,7 +10,7 @@ import org.junit.Test;
 import page.*;
 
 @Story("Переход в личный кабинет")
-public class PersonalAreaTest {
+public class PersonalAreaTest extends RunConfiguration {
 
     private User user;
     private UserClient userClient;
@@ -26,7 +26,7 @@ public class PersonalAreaTest {
         LoginPage loginPage = Selenide.open(LoginPage.getUrl(), LoginPage.class);
         loginPage.login(user.getEmail(), user.getPassword());
 
-        menuPageFragment = loginPage.getMenuPage();
+        menuPageFragment = loginPage.getMainMenu();
     }
 
     @After

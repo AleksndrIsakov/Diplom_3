@@ -22,7 +22,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 @Story("Регистрация")
-public class RegisterTest {
+public class RegisterTest extends RunConfiguration {
 
     private User user;
     private UserClient userClient;
