@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import page.*;
 
+import static org.junit.Assert.assertTrue;
+
 @Story("Вход")
 @RunWith(Parameterized.class)
 public class LoginTest extends RunConfiguration {
@@ -39,7 +41,7 @@ public class LoginTest extends RunConfiguration {
 
     @Parameterized.Parameters
     public static Object[][] setData() {
-        return new Object[][] {
+        return new Object[][]{
                 {AbstractPage.getFullUrl(""), new MenuPageFragment()},
                 {MainPage.getUrl(), new MainPage()},
                 {RegisterPage.getUrl(), new RegisterPage()},
@@ -50,7 +52,7 @@ public class LoginTest extends RunConfiguration {
 
     @Test
     @DisplayName("Авторизация пользователя с разных страниц")
-    public void checkLogin(){
+    public void checkLogin() {
         LoginPage loginPage;
         AbstractPage oneOfPage = Selenide.open(url, page.getClass());
         if (oneOfPage instanceof LoginInterface)
@@ -58,6 +60,7 @@ public class LoginTest extends RunConfiguration {
         else
             loginPage = (LoginPage) oneOfPage;
 
-        loginPage.login(user.getEmail(),user.getPassword());
+        loginPage.login(user.getEmail(), user.getPassword());
+        assertTrue("Нет перехода к конструктору", loginPage.isPageLoad("BurgerConstructor"));
     }
 }

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends AbstractPage implements LoginInterface {
 
-    public static String getUrl(){
+    public static String getUrl() {
         return AbstractPage.getFullUrl("");
     }
 
@@ -17,9 +17,9 @@ public class MainPage extends AbstractPage implements LoginInterface {
         $(By.xpath("//span[text()='" + section + "']")).shouldBe(Condition.visible).click();
     }
 
-    @Step ("Проверим видимость выбранной секции {section}")
+    @Step("Проверим видимость выбранной секции {section}")
     public boolean checkSection(String section) {
-        return $(By.xpath("//h2[text()='" + section + "']")).shouldBe(Condition.visible).isDisplayed();
+        return $(By.xpath("//h2[text()='" + section + "']")).shouldBe(Condition.enabled).isDisplayed();
     }
 
     @Override

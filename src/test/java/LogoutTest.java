@@ -11,6 +11,8 @@ import page.LoginPage;
 import page.MenuPageFragment;
 import page.ProfilePage;
 
+import static org.junit.Assert.assertTrue;
+
 @Story("Выход из аккаунта")
 public class LogoutTest extends RunConfiguration {
     private User user;
@@ -40,5 +42,6 @@ public class LogoutTest extends RunConfiguration {
     @DisplayName("Выход из аккаунта")
     public void logout() {
         profilePage.clickButton("Выход");
+        assertTrue("Нет перехода на авторизацию", profilePage.isPageLoad("login"));
     }
 }

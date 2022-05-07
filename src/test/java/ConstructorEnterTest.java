@@ -11,6 +11,8 @@ import page.LoginPage;
 import page.MainPage;
 import page.MenuPageFragment;
 
+import static org.junit.Assert.assertTrue;
+
 @Story("Переход из личного кабинета в конструктор")
 public class ConstructorEnterTest extends RunConfiguration {
     private User user;
@@ -39,11 +41,13 @@ public class ConstructorEnterTest extends RunConfiguration {
     @DisplayName("Переход в конструктор по клику на «Конструктор»")
     public void enterConstructor() {
         MainPage mainPage = menuPageFragment.enterConstructor();
+        assertTrue("Нет перехода к конструктору", mainPage.isPageLoad("BurgerConstructor"));
     }
 
     @Test
     @DisplayName("Переход в конструктор по клику на логотип «Stellar Burgers»")
     public void enterStellarBurgers() {
         MainPage mainPage = menuPageFragment.enterConstructorByLogo();
+        assertTrue("Нет перехода к конструктору", mainPage.isPageLoad("BurgerConstructor"));
     }
 }

@@ -11,7 +11,7 @@ public class LoginPage extends AbstractPage {
 
     private static final String LOGIN_PAGE = "login";
 
-    public static String getUrl(){
+    public static String getUrl() {
         return AbstractPage.getFullUrl(LOGIN_PAGE);
     }
 
@@ -22,7 +22,7 @@ public class LoginPage extends AbstractPage {
     private SelenideElement password;
 
     @Step("Выполним вход под: {email}")
-    public MainPage login(String email, String password){
+    public MainPage login(String email, String password) {
         this.email.setValue(email);
         this.password.setValue(password);
         clickButton("Войти");

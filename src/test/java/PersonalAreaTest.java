@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import page.*;
 
+import static org.junit.Assert.assertTrue;
+
 @Story("Переход в личный кабинет")
 public class PersonalAreaTest extends RunConfiguration {
 
@@ -38,6 +40,8 @@ public class PersonalAreaTest extends RunConfiguration {
     @Test
     @DisplayName("Переход по клику в «Личный кабинет»")
     public void enterPersonalArea() {
-            profilePage = menuPageFragment.enterPersonalArea();
+
+        profilePage = menuPageFragment.enterPersonalArea();
+        assertTrue("Нет перехода в личный кабинет", profilePage.isPageLoad("account"));
     }
 }

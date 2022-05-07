@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 
 import static com.codeborne.selenide.Selenide.$;
+import static org.junit.Assert.assertTrue;
 
 public abstract class AbstractPage {
     private static final String APPLICATION_URL = "https://stellarburgers.nomoreparties.site/";
@@ -27,9 +28,14 @@ public abstract class AbstractPage {
         return $(By.xpath("//label[text()='" + input + "']/../input"));
     }
 
-    @Step("Нажмем кнопку {name}")
+    @Step("Нажмем кнопку {button}")
     public void clickButton(String button) {
         $(By.xpath("//button[text()='" + button + "']")).shouldBe(Condition.visible).click();
     }
 
+    @Step("Загрузка страницы {pageClass}")
+    public boolean isPageLoad(String pageClass) {
+        SelenideElement page = $(By.xpath("//*[contains(@class, '" + pageClass + "')]")).shouldBe(Condition.visible);
+       return page.isDisplayed();
+    }
 }

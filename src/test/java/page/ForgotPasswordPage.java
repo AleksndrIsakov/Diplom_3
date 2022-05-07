@@ -1,8 +1,6 @@
 package page;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -16,7 +14,7 @@ public class ForgotPasswordPage extends AbstractPage implements LoginInterface {
     @FindBy(how = How.LINK_TEXT, using = "Войти")
     private SelenideElement toLogin;
 
-    public static String getUrl(){
+    public static String getUrl() {
         return AbstractPage.getFullUrl(FORGOT_PASSWORD_PAGE);
     }
 

@@ -1,14 +1,10 @@
 import api.UserClient;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.conditions.webdriver.CurrentFrameCondition;
-import com.codeborne.selenide.conditions.webdriver.CurrentFrameUrl;
 import data.User;
 import data.UserGenerator;
-import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import lombok.extern.java.Log;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
